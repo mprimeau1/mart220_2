@@ -1,43 +1,41 @@
-// create all the variables for the buttons and videos
 let playing;
 let button, muteButton;
 let muted;
 let volumeDownButton, volumeUpButton;
 let myCurrentVolume = 1;
-let myVideos = []; // array to hold all the video objects
+let myVideos = [];
 
-// everything happens in the setup now
+
 function setup() {
 
-    // create multiple video objects
-    myVideos.push(new myVideo("assets/IntoTheWoods.mp4", 50, 100, 350, 480));
-    myVideos.push(new myVideo("assets/WalkThroughTime.mp4", 460, 100, 480, 360));
+    myVideos.push(new myVideo("assets/face.mp4", screen.width/2, 0, 400, 300));
+    myVideos.push(new myVideo("assets/mid.mp4", screen.width/2, 300, 400, 300));
+    myVideos.push(new myVideo("assets/feet.mp4", screen.width/2, 600, 400, 300));
 
-    // create a canvas for the videos to sit on
     createCanvas(screen.width, screen.height);
-    background(120);
-    // create a title
-    textSize(42);
-    text("My Video Wall", 50, 50);
+    background('black');
 
-    // add the all buttons to play the videos
-    button = createButton('play');
-    button.position(90, 600);
+    textSize(40);
+    fill('white');
+    text("Strange Place", 75, 50);
+    text("By: Mary Primeau", 50, 90);
+
+    button = createButton('start');
+    button.position(182, 400);
     muteButton = createButton('mute');
-    muteButton.position(90, 630);
+    muteButton.position(180, 430);
 
     volumeDownButton = createButton('volume down');
-    volumeDownButton.position(90, 660);
+    volumeDownButton.position(150, 460);
 
     volumeUpButton = createButton('volume up');
-    volumeUpButton.position(90, 690);
+    volumeUpButton.position(160, 490);
 
     button.mousePressed(playVideo);
     muteButton.mousePressed(audioVolume);
     volumeDownButton.mousePressed(volumeDown);
     volumeUpButton.mousePressed(volumeUp);
 
-    // create all the videos 
     for (let i = 0; i < myVideos.length; i++) {
         let tempVideo = createVideo([myVideos[i].theVideoPath]);
         tempVideo.size(myVideos[i].theW, myVideos[i].theH);
@@ -47,7 +45,6 @@ function setup() {
 
 }
 
-// turn down the video volume
 function volumeDown() {
     myCurrentVolume -= .1;
     if (myCurrentVolume <= 0) {
@@ -60,7 +57,6 @@ function volumeDown() {
 
 }
 
-// turn the volume up
 function volumeUp() {
     myCurrentVolume += .1;
     if (myCurrentVolume >= 1) {
@@ -74,7 +70,6 @@ function volumeUp() {
 
 }
 
-//change the volume from mute to unmute
 function audioVolume() {
     if (muted) {
         muteButton.html('unmute')
@@ -97,7 +92,6 @@ function audioVolume() {
 
 }
 
-// This function is called when the video loads
 function playVideo() {
 
     if (playing) {
@@ -106,7 +100,7 @@ function playVideo() {
             temp.pause();
             temp.volume(1);
         }
-        button.html('play');
+        button.html('start');
         playing = false;
     } else {
         for (let i = 0; i < myVideos.length; i++) {
@@ -115,7 +109,7 @@ function playVideo() {
             temp.volume(1);
         }
 
-        button.html('pause');
+        button.html('stop');
         playing = true;
 
     }
