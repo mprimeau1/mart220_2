@@ -1,0 +1,4 @@
+For this week I went through the tutorials for TinkerrCad and codeblocks. While going through TinkerCad I struggled to follow the instructions, they were terrible tutorials.  I have built a few Arduinos physically (small theremin and a fan) and it was way easier then what the online virtual versions.  I understand the very basics of electrical circuitry but that’s about it.
+
+
+	With codeblocks I followed the tutorials a bit easier but still found it frustrating. I felt as if a few of the steps didn’t explain a few things well enough but I just went through it. Intro to shapes was a good start to the projects. Then moving shapes and roating were a good. Towards the end of each tutorials I felt as if they just wanted the user to super struggle until it was perfect. Overall it was a good introduction to 3d concepts. 
