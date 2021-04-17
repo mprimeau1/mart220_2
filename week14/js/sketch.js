@@ -30,6 +30,8 @@ function draw() {
         mainColor = 255 - mainColor; 
         strokeColor = 255 - strokeColor; 
     }
+    
+    saveFrames("myMovie",".png",1,25);
 
     if (frameCount > 80) {
         noLoop();
