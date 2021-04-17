@@ -23,7 +23,7 @@ function setup() {
           if (x > startX + 20 && x < startX + 50 && y > startY + 15 && y < startY + 30) {
             writeColor(img, x, y, 100, 50, 50, floor(random(255)));
           } else {
-            writeColor(img, x, y, 200, 90, 50, floor(random(255)));
+            writeColor(img, x, y, 200, 90, 100, floor(random(255)));
           }
         }
       }
@@ -35,12 +35,12 @@ function setup() {
         let red = random(255);
         let green = random(255);
         let blue = random(255);
-        let alpha = 100;
+        let alpha = 150;
         writeColor(img, x, y, red, green, blue, alpha);
       }
     }
   
-    // draw upper border line
+  
     for(y = 0; y < 5; y++)
     {
       for (x = 0; x < img.width; x++) 
@@ -49,7 +49,7 @@ function setup() {
       }
     }
   
-    // draw a bottom border line
+
     y = img.height - 1;
     for(let i = 0; i < 5; i++)
     {

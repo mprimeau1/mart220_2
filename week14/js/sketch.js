@@ -9,6 +9,8 @@ function setup() {
     rectMode(CORNER);
 }
 function draw() {
+    push();
+  
     stroke(random(strokeColor),random(strokeColor),random(strokeColor),random(100));
     fill(random(mainColor),random(mainColor),random(mainColor), random(50));
 
@@ -32,4 +34,34 @@ function draw() {
     if (frameCount > 80) {
         noLoop();
     }
+    
+    pop();
+    
+    
+    push();
+    fill('pink');
+    stroke('pink');
+    strokeWeight(10);
+    
+    rect(50, 50, 25, 200);
+    rect(150, 50, 25, 200);
+    line(75, 50, 110, 150);
+    line(150, 50, 110, 150);
+    
+    pop();
+    
+    push();
+    
+    stroke('pink');
+    fill('pink');
+    strokeWeight(10);
+    
+    rect(250, 50, 25, 200);
+    ellipse(300, 90, 100, 100);
+
+    
+    pop();
+
+    
+
 }
